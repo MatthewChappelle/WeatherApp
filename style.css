@@ -1,3 +1,17 @@
 #search-btn:hover {
 background-color:gray;
 }
+
+.city, .current-weather {
+    font-size: x-large; 
+    font-weight: bold;
+}
+
+.DOM {
+    border: 1px gray;
+    padding-top: 20px;
+}
+
+.inline {
+    display: inline-block;
+}

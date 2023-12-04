@@ -20,40 +20,41 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        Weather Dashboard
+    <header style="display: flex; justify-content: center; font-size:xx-large;">
+        Weather Dashboard Application
     </header>
-    <div class="main-app" style="height: 100vh; display: flex;">
-    <div class="search-side" style="width: 40%; background-color:blue">
-        small space
+    <div class="main-app" style="height: 100%; display: flex;">
+    <div class="search-side" style="width: 40%; padding: 5px; background-color:blue">
+
         <div class="card">
-            <div class="search">
-                <input id="search-field" type="text" placeholder="enter a city">
-                <button id="search-btn">search</button>
+            <div class="search" style="display: flex; justify-content: space-around;">
+                <input id="search-field" type="text" style="width: 70%" placeholder="enter a city">
+                <button id="search-btn" style="width: 29%;">search</button>
             </div>
-            <div class="history">
+            <div class="history" style="display: flex; flex-direction: column;">
 
             </div>
         </div>
     </div>
     <div class="display-side" style="width: 60%; background-color: rebeccapurple">
-        <div class="current-weather">
-            <div class="city"></div>
-            <div class="date"></div>
-            <div class="weather-icon"></div>
+        <div class="current-weather" style="padding: 5px;">
+            <div class="inline"></div>
+            <div class="date inline"></div>
+            <div class="weather-icon inline"></div>
             <div class="temp"></div>
             <div class="humidity"></div>
-            <div class="windspeed"></div>
-            
+            <div class="wind-speed"></div>
+
 
 
         </div>
-        <div class="future-weather">
-
+        <div class="future-weather" style="padding: 100px 10px 10px 10px">
+            
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
