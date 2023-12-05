@@ -16,7 +16,7 @@ async function findWeather(city) {
 
     //if weather cloudy, icon cloudy etc
     const displayIcon = new Image();
-    displayIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    displayIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
     //set all information into proper div using jQuerry
     $('.city').html(data.name);
@@ -50,7 +50,7 @@ async function findForecast(city) {
 
             var date = new Date(forecast[i].dt * 1000);
             const displayIcon = new Image();
-            displayIcon.src = `https://openweathermap.org/img/wn/${forecast[i].weather[0].icon}@2x.png`;
+            displayIcon.src = `https://openweathermap.org/img/wn/${forecast[i].weather[0].icon}.png`;
 
             var day = date.toLocaleDateString("en-US", { weekday: 'long' });
             var date = forecast[i].dt_txt.split(" ")[0];
@@ -63,11 +63,11 @@ async function findForecast(city) {
 
             // Create each block div with styling and inner text/icons 
             var dayBlock = $("<div>").attr("id", dayID).addClass("city DOM").text(day + " ");
-            var dateBlock = $("<div>").attr("id", dayID).addClass("date inline").text(date);
-            var iconBlock = $("<img>").attr("id", dayID).addClass("weather-icon inline").attr("src", displayIcon.src);
-            var tempBlock = $("<div>").attr("id", dayID).addClass("temp").text(`${temp}°F`);
-            var windBlock = $("<div>").attr("id", dayID).addClass("wind-speed").text(`${windSpeed}MPH`);
-            var humidityBlock = $("<div>").attr("id", dayID).addClass("humidity").text(humidity);
+            var dateBlock = $("<div>").attr("id", dayID).addClass("sub date inline").text(date);
+            var iconBlock = $("<img>").attr("id", dayID).addClass("sub weather-icon inline").attr("src", displayIcon.src);
+            var tempBlock = $("<div>").attr("id", dayID).addClass("sub temp").text(`${temp}°F`);
+            var windBlock = $("<div>").attr("id", dayID).addClass("sub wind-speed").text(`${windSpeed}MPH`);
+            var humidityBlock = $("<div>").attr("id", dayID).addClass("sub humidity").text(humidity);
 
             //append in layers to the main container
             dayBlock.append(dateBlock, iconBlock, tempBlock, windBlock, humidityBlock);
@@ -137,7 +137,10 @@ async function performSearch(input) {
 
 //keep max history at 5
 function updateHistory() {
-    if ($('.history').children().length > 5) {
+    let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
+    while (searchHistory.length > 5) {
+        searchHistory.pop();
         $('.history').children().last().remove();
     }
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 }

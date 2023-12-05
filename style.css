@@ -3,8 +3,11 @@ background-color:gray;
 }
 
 .city, .current-weather {
-    font-size: x-large; 
+    font-size: large; 
     font-weight: bold;
+}
+.sub {
+    font-size: medium;
 }
 
 .DOM {
