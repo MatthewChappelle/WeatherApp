@@ -19,7 +19,7 @@ async function findWeather(city) {
     displayIcon.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
     //set all information into proper div using jQuerry
-    $('.city').html(data.name);
+    $('.city').html(`Today in ${data.name} on `);
     $('.weather-icon').empty().append(displayIcon);
     $('.date').html(dayjs().format("MMM DD, YYYY"));
     $('.temp').html(data.main.temp + "F" + " currently");

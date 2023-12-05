@@ -19,3 +19,7 @@ The perfect application to check how the weather feels outside. Just search a ci
 
 
 <a href=https://matthewchappelle.github.io/WeatherApp/> Check it out here!</a>
+
+![!\[LocalStorage Feature\](image.png)](assets/localStorage.png)
+
+![!\[Deployed App\](image.png)](assets/deployedApp.png)
