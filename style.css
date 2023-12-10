@@ -18,3 +18,7 @@ background-color:gray;
 .inline {
     display: inline-block;
 }
+
+.DOM {
+    border: 1px solid black;
+}
